@@ -17,6 +17,9 @@
 <h2>What is tensor flow</h2>
 <p>Tensor flow is a computational graph based library. The library supports creation of graphs, training of the graphs, and running the graph. </p>
 <p>A rough application may be something as such:</p>
+<div>
+<img src="Example.PNG" />
+</div>
 <p>Where x and y are input data, w are weights for the associated input data and z is the result of such data. Of course realistic applications of tensor flow will likely have hundreds or thousands of such nodes. </p>
 <p>Training of data is often in terms of the weights provided above, with its objective to minimize the 'loss' of the output, z. The 'loss' is specified in terms of a loss function which is discussed later.</p>
 <p>One a graph has been fit, then it can be used to predict output of unseen data!</p>
@@ -39,7 +42,12 @@
 <p>The goal of training is to find a graph (neural network) that produces an expected output given some input. A loss function describes how well the graph matches the 'ground truth'. In order to find the best variables the loss function is minimized. Tensor flow provides both loss functions and optimizers.</p>
 <h2>What is tensor flow used for</h2>
 <p>Tensor flow has a large number of applications such as image recognition, speech recognition, natural language processing and much much more. Most of these applications also require data additional processing to get data into a format applicable for tensor flow. </p>
-<p>TensorFlow walks through an example of using TensorFlow to recognize handwritten digits. Of course this is just one example and there are many other applications of TensorFlow.</p>
+<p>TensorFlow walks through an example of using TensorFlow to recognize handwritten digits. Of course this is just one example and there are many other applications of TensorFlow.
+Here is an example of a kind of digit TensorFlow could be used to recognize.
+</p>
+<div>
+<img src="MNIST.png" />
+</div>
 <h2>Data imports</h2>
 <p>With more complicated models and data it may not be feasible to go throughout the entire process in code. Also it is possible that training data may change frequently. In these cases it may be desirable to use TensorFlow functionality to import data from inputfiles.</p>
 <p>TensowFlow uses NumPy frequently to load and manipulate data. More information on NumPy can be found here: http://www.numpy.org/.</p>
