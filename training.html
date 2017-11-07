@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./codehilite.css">
+</head>
+
+<body>
+
+<h1>Training</h1>
+<p>This page will touch on the basic steps to set up training in TensorFlow.</p>
+<h3>Preparation:</h3>
+<p>The first step is to import training data, such as the MNIST database.</p>
+<p>Next, you can set parameters such as the learning rate, number of training iterations, or the batch size to be used later in your code. The learning rate is important because it determines how fast weights are updated.</p>
+<p>If you're unsure, a safe value to use would be:</p>
+<pre><code>learning_rate = 0.01
+</code></pre>
+<h3>Placeholders and Variables</h3>
+<p>Now you need to create placeholder operations. In TensorFlow, a placeholder is used to feed training data. It initially has no value, but will contain training examples during the training execution.</p>
+<pre><code>x = tf.placeholder("float", None)
+</code></pre>
+<p>You will also create variable operations. Variables can be used to store</p>
+<ul>
+<li>Weights - the probability of how data flows in the graph</li>
+<li>Biases - the difference between expected and actual values, which can be used for a regression shift</li>
+</ul>
+<pre><code class="language-">weights = tf.Variable(tf.random_normal([784, 200], stddev=0.35), name="weights")
+biases = tf.Variable(tf.zeros([200]), name="biases")
+</code></pre>
+<h3>Loss function:</h3>
+<p>Next you will need to create a loss function (AKA cost function).</p>
+<p>The purpose of this function is to calculate the amount that the computed output differs from the actual value.</p>
+<p>The tf.losses module contains a set of loss operations.</p>
+<p>Additionally, here is a list of mathematical tensor operations that can be used to create a loss function:</p>
+<p><a href="https://www.tensorflow.org/api_guides/python/math_ops#Reduction">https://www.tensorflow.org/api_guides/python/math_ops#Reduction</a></p>
+<h3>Optimizer:</h3>
+<p>An essential component of successfully training with TensorFlow is an optimizer.
+The base class tf.train.Optimizer contains instantiable subclasses which use different optimization algorithms, one being the gradient descent algorithm.</p>
+<p>Example instantiation:</p>
+<pre><code>optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost_function)
+</code></pre>
+<p>Optimizers provide key methods to do things such as applying gradients and minimizing loss.</p>
+<h3>Training process:</h3>
+<p>For a specified number of training iterations, you will</p>
+<ul>
+<li>Loop over each batch in the training data</li>
+<li>Run the graph with the optimizer to fit the data</li>
+<li>Compute the average loss</li>
+<li>Log results</li>
+</ul>
+<p>Now that you're done training, you can move on to calculate the accuracy of the whole model.</p>
+<p>To see a full example, refer to the Example page.</p>
+
+</body>
+</html>
